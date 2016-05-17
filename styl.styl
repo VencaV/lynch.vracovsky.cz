@@ -1,0 +1,355 @@
+// Definujeme použité barvy
+link-color = #b80718;
+
+// CSS3 vlastnosti
+box-shadow()
+	-moz-box-shadow arguments;
+	-webkit-box-shadow arguments;
+	box-shadow arguments;
+radius(arguments = 5px)
+	-moz-border-radius arguments;
+	-webkit-border-radius arguments;
+	border-radius arguments;
+gradient(top-color = #000, bottom-color = #111)
+	background-color bottom-color;
+	background-image -webkit-gradient(linear, left top, left bottom, from(top-color), to(bottom-color));
+	background-image -webkit-linear-gradient(top, top-color, bottom-color);
+	background-image -moz-linear-gradient(top, top-color, bottom-color);
+	background-image -ms-linear-gradient(top, top-color, bottom-color);
+	background-image -o-linear-gradient(top, top-color, bottom-color);
+	background-image linear-gradient(to bottom, top-color, bottom-color);
+multiple-backgrounds(top-color, bottom-color, image)
+	background-color bottom-color;
+	background-image image, -webkit-gradient(linear, left top, left bottom, from(top-color), to(bottom-color));
+	background-image image, -webkit-linear-gradient(top, top-color, bottom-color);
+	background-image image, -moz-linear-gradient(top, top-color, bottom-color);
+	background-image image, -ms-linear-gradient(top, top-color, bottom-color);
+	background-image image, -o-linear-gradient(top, top-color, bottom-color);
+	background-image image, linear-gradient(to bottom, top-color, bottom-color);
+
+// Zkratky - pozice
+abs()
+	position absolute
+rel()
+	position relative
+fxd()
+	position fixed
+sta()
+	position static
+
+// Zkratky - floatování
+fll()
+	float left
+flr()
+	float right
+fln()
+	float none
+
+// Zkratky - display, rozměry
+nn()
+	display none
+bl()
+	display block
+ibl()
+	display inline-block
+dim(width = 10px, height = 10px)
+	display block;
+	width width;
+	height height;
+
+// Zkratky - visibility
+hdn()
+	visibility hidden
+vis()
+	visibility visible
+
+// Zkratky - formátování textu
+tal()
+	text-align left
+tar()
+	text-align right
+tac()
+	text-align center
+lrg()
+	font-size large
+lrgr()
+	font-size larger
+sml()
+	font-size small
+smlr()
+	font-size smaller
+bld()
+	font-weight bold
+nrm()
+	font-weight normal
+tdn()
+	text-decoration none
+tdu()
+	text-decoration underline
+*
+	-moz-box-sizing border-box; -webkit-box-sizing border-box; -ms-box-sizing border-box; box-sizing border-box;
+	
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+	margin: 0
+	padding: 0
+	border: 0
+	font-size: 100%
+	font: inherit
+	vertical-align: baseline
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section
+	display: block
+
+body
+	line-height: 1
+
+ol, ul
+	list-style: none
+
+blockquote, q
+	quotes: none
+
+blockquote:before, blockquote:after,
+q:before, q:after
+	content: none
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+
+.clearfix
+	zoom 1;
+	&:after
+		clear both; content '&nbsp;'; bl(); font-size 0; line-height 0; hdn(); width 0; height 0;
+
+body
+	background #0c0c0c;
+	color: #fff
+	font-size: 16px
+	line-height: 1.7
+	font-family 'Source Sans Pro', 'Geneva CE', lucida, sans-serif
+	padding: 0 1em
+
+em
+	font-weight: bold
+	font-style: normal
+
+input
+	background-color: #000
+	color: #aaa
+	font-weight: bold
+	border: 1px solid #fff
+
+a
+	color: link-color
+
+a:hover
+	color: #999;
+	text-decoration: none
+
+a:active
+	color: #aaa
+
+p
+	margin: 0 0 1em
+
+img
+	margin: 1em
+
+hr
+	color: #999
+	height: 1px
+
+h1,h2,h3,h4
+	margin: 0 0 1em
+
+h1
+	border-bottom: 2px solid #999
+	font-size: 200%
+
+h2
+	border-bottom: 1px solid #999
+	font-size: 170%
+
+h3
+	border-bottom: 1px dashed #999
+	font-size: 140%
+
+h4
+	border-bottom: 1px dashed #999
+	font-size: 120%
+
+ul li
+	list-style-image: url('img/li.png')
+	margin-top: .5em
+
+ul,ol
+	margin: 0 0 20px 40px
+
+#obsah
+	text-align: left
+	margin: 0 auto
+	max-width: 1100px
+	position: relative
+	padding: 20px 20px 0
+	border-left 1px solid #1d1d1d
+	border-right 1px solid #1d1d1d
+	background #000
+
+#navigation
+	clear both; margin 0 0 20px; font-size: large
+	ul
+		margin 0; border 1px solid #111; gradient(#111, #000);
+		li
+			display: table-cell
+			a
+				bl()
+				height: 60px
+				padding 0 2em
+				border-right 1px solid #111
+				color: #fff
+				text-decoration: none
+				line-height: 58px
+				gradient(#111, #000)
+				&:hover
+					gradient(#000, #111)
+		&.sub
+			border-top 0;
+			li
+				a
+					height 42px; line-height 42px;
+
+
+#logo
+	rel(); fll();
+	width: 300px
+	height: 300px
+	display: block
+	margin: 0 10px 0 0;
+	tdn()
+	span
+		abs(); left 0; top 0; bl(); width 100%; height 100%;
+		background: url('img/logo.jpg') center top no-repeat
+
+.motto
+	fll(); margin 0 0 10px; font-size 48px; color link-color;
+	> span
+		bl(); font-size 30px;
+
+.social
+	height 20px; vertical-align top; line-height 20px;
+	.fb-like
+		height 20px;
+	.twitter-share-button
+		vertical-align text-bottom;
+
+#paticka
+	text-align: center
+	line-height: 36px
+	position: relative
+	padding: 2em 0
+	border-top: 1px solid #111
+
+#paticka a
+	padding 0 1ex;
+
+.right,.left
+	border: 1px solid #666
+
+.right
+	float: right
+
+.left
+	float: left
+
+.bezti
+	text-indent: 0px
+
+.hr
+	margin: 2em 0 2em 0
+
+.uz
+	font-style: italic
+	font-size: 80%
+	color: #aaa
+
+.citace
+	border-style: solid
+	border-width: 1px 1px 1px 4px;
+	border-color: #111 #111 #111 #ccc
+	padding: 1ex 1em
+	margin: 0 0 20px 2em
+	gradient(#000, #050505);
+
+.nula
+	font-size: 0px
+
+.nula a:hover
+	background-color: #fff
+
+.vysvetleni
+	margin-left: 2em
+	color: #aaa
+	font-style: italic
+
+.clear
+	clear: both
+
+.autor
+	font-size: smaller
+	color: #ddd
+	font-style: italic
+
+@media all and (max-width: 800px)
+	#logo
+		fln(); margin 0 auto;
+
+	.motto
+		fln(); bl(); tac(); font-size 36px;
+		span
+			font-size 24px;
+
+	#navigation
+		font-size 100%;
+		ul
+			li
+				a
+					padding 0 1em;
+
+@media all and (max-width: 600px)
+	#logo
+		nn();
+
+	#navigation
+		ul
+			li
+				a
+					padding 0 10px;
+			&.sub
+				font-size 90%;
+
+@media all and (max-width: 480px)
+
+	#navigation
+		ul
+			background none;
+			li
+				bl(); margin 0;
+				a
+					padding 0 10px;
+			&.sub
+				font-size 100%;
+
